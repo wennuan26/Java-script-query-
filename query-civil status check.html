@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Status</title>
+    <style>
+        form {
+            margin: auto;
+            padding: 100px 5px;
+            max-width: 500px;
+            background-color: #6af7f5;
+            border-color: rgb(161, 103, 31);
+            border-radius: 5px;
+            text-align: center;
+        }
+        #partner-name {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Civil Status</h2><br>
+        <label>
+            <input type="radio" name="status" value="single" onclick="togglePartnerName()"> Single
+        </label>
+        <label>
+            <input type="radio" name="status" value="married" onclick="togglePartnerName()"> Married
+        </label>
+        <div id="partner-name">
+            <label for="partner">Partner name:</label>
+            <input type="text" id="partner" name="partner">
+        </div>
+    </form>
+    <script>
+        function togglePartnerName() {
+            const partnerNameDiv = document.getElementById('partner-name');
+            const marriedOption = document.querySelector('input[name="status"][value="married"]');
+
+            if (marriedOption.checked) {
+                partnerNameDiv.style.display = 'block';
+            } else {
+                partnerNameDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
